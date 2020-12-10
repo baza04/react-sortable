@@ -1,34 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import './App.css'
+import Core from './Core'
 
 function App() {
-  const [value, setValue] = React.useState([])
+  const [heroes, setHeroes] = React.useState([])
 
-  const loadData = heroes => {
-    console.log(heroes) // write your code using the data in a function
-    // note that you can not access heroes before this function is called.
-  }
-  
   useEffect(() => {
-    // Request the file fetch, it will download it in your browser cache
     fetch('https://rawcdn.githack.com/akabab/superhero-api/0.2.0/api/all.json')
-    .then((response) => response.json()) // parse the response from JSON
-    .then((heroes) => {
-      setValue(heroes)
-    }) // .then will call the function with the JSON value
-    console.log("THIS IS STATE VALUE", value)
+    .then((response) => response.json())
+    .then((data) => setHeroes(data))
   }, [])
 
     
   return (
 
     <div className="App">
+        <h1>Sortable React</h1>
 
-        {
-          value.map((hero, index) => {
-            console.log("Hero Output", hero, index)
-          })
-        }
+        <Core heroes={heroes} setHeroes={setHeroes} />
+        
 
     </div>
 
