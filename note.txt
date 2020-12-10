@@ -1,0 +1,4 @@
+after parsing log result to know type
+if json -> str
+if arr -> [{}]
+
