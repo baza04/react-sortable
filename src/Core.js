@@ -1,20 +1,29 @@
 import React from 'react'
-import HeroesTable from './View/HeroesTable'
+import HeroesList from './View/HeroesList'
+import PropTypes from 'prop-types'
 
-function Core(props) {
+function Core({heroes, setHeroes}) {
 
-    function SortHeroes(heroes) {
-        const sortedHeroes = []
-        return sortedHeroes
-    }
+    /* function SortHeroes() {
+    //     // const sortedHeroes = heroes // [] default value
+    //     setHeroes(
+    //         heroes.map((hero) => {
+    //         // just create handler func
+    //         return heroes
+    //     }))
+    // }*/
 
     return (
-        //   {
-            props.heroes.map((hero, index) => {
-                console.log("Hero Output", hero, index)
-            })
-        //   } 
+        <div className='wrapped'>
+            
+            <HeroesList heroes={heroes} /> {/* before do some logic */}
+        </div>
     )
+}
+
+Core.propTypes = {
+    heroes: PropTypes.arrayOf(PropTypes.object).isRequired,
+    setHeroes: PropTypes.func.isRequired,
 }
 
 export default Core

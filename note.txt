@@ -2,3 +2,41 @@ after parsing log result to know type
 if json -> str
 if arr -> [{}]
 
+ -- need to show:
+Icon (.images.xs, should be displayed as images and not as a string)
+Name (.name)
+Full Name (.biography.fullName)
+Powerstats (each entry of .powerstats)
+Race (.appearance.race)
+Gender (.appearance.gender)
+Height (.appearance.height)
+Weight (.appearance.weight)
+Place Of Birth (.biography.placeOfBirth)
+Alignement (.biography.alignment)
+
+
+
+
+
+
+
+appearance: Object { gender: "Male", race: "Ungaran", eyeColor: "Blue", … }
+​
+biography: Object { alterEgos: "No alter egos found.", placeOfBirth: "Ungara", firstAppearance: "Showcase #22 (October, 1959)", … }
+​
+connections: Object { groupAffiliation: "Green Lantern Corps, Black Lantern Corps", relatives: "Amon Sur (son), Arin Sur (sister), Thaal Sinestro (brother-in-law), Soranik Natu (niece)" }
+​
+id: 3
+​
+images: Object { xs: "https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api/images/xs/3-abin-sur.jpg", sm: "https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api/images/sm/3-abin-sur.jpg", md: "https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api/images/md/3-abin-sur.jpg", … }
+​
+name: "Abin Sur"
+​
+powerstats: Object { intelligence: 50, strength: 90, speed: 53, … }
+​
+slug: "3-abin-sur"
+​
+work: Object { occupation: "Green Lantern, former history professor", base: "Oa" }
+​
+<prototype>: Object { … }
+HeroItem.js:31
