@@ -2,6 +2,12 @@ after parsing log result to know type
 if json -> str
 if arr -> [{}]
 
+after implementing search and sort features -> 
+-> make feat to return source state
+
+
+
+
  -- need to show:
 Icon (.images.xs, should be displayed as images and not as a string)
 Name (.name)

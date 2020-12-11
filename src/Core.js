@@ -1,23 +1,36 @@
 import React from 'react'
+import Context from './context'
 import HeroesList from './View/HeroesList'
 import PropTypes from 'prop-types'
 
 function Core({heroes, setHeroes}) {
 
-    /* function SortHeroes() {
+    // function SearchHeroes(key) {
+    //     setHeroes(
+    //         heroes.filter((hero) => {
+
+    //             return hero.name.includes(key) || hero.biography.fullName.includes(key)
+    //         })
+    //     )
+    // } 
+
+    //  function SortHeroes() {
     //     // const sortedHeroes = heroes // [] default value
     //     setHeroes(
     //         heroes.map((hero) => {
     //         // just create handler func
     //         return heroes
     //     }))
-    // }*/
+    // }
 
     return (
-        <div className='wrapped'>
+        // <Context.Provider value={{ SearchHeroes, SortHeroes }} >
+            <div className='Core'>
+
+                <HeroesList heroes={heroes} />
+            </div>
+        // </Context.Provider>
             
-            <HeroesList heroes={heroes} /> {/* before do some logic */}
-        </div>
     )
 }
 
