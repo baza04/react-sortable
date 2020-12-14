@@ -13,23 +13,32 @@ import Context from '../context'
 function SearchField() {
     const { setQuery } = useContext(Context)
     
+    function handleChange(event) {
+        console.log('select value', event.target.value)
+    }
+
+     function handleInput(event) {
+         
+         setQuery({key: event.target.value.toLowerCase()})
+        } 
+
     return (
         <div className='SearchHeroes' >
             <input 
                 type='text'
-                onChange={(event) => setQuery({key: event.target.value.toLowerCase()})}
+                onChange={handleInput}
             />
 
-            <select onChange={console.log((event) => event.target.value)}>
+            <select onChange={handleChange}>
                 <option selected value='name' >Name</option>
-                <option >FullName</option>
-                <option  >PowerStats</option>
-                <option  >Race</option>
-                <option  >Gender</option>
-                <option  >Height</option>
-                <option  >Weight</option>
-                <option  >placeOfBirth</option>
-                <option  >Alignment</option>
+                <option value='FullName' >FullName</option>
+                <option value='PowerStats' >PowerStats</option>
+                <option value='Race' >Race</option>
+                <option value='Gender' >Gender</option>
+                <option value='Height' >Height</option>
+                <option value='Weight' >Weight</option>
+                <option value='placeOfBirth' >placeOfBirth</option>
+                <option value='Alignment' >Alignment</option>
             </select>
 
         </div>

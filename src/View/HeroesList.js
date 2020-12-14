@@ -10,7 +10,7 @@ const style = {
     }
 }
 
-function HeroesList({ heroes }) {
+function HeroesList({ heroes = [] }) {
     // const {SearchHeroes} = useContext(Context)
 
     return (
