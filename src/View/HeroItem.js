@@ -37,9 +37,9 @@ function HeroItem({ hero, index }) {
             <pre>  Alignment: {hero.biography.alignment}</pre>
             
             
-            {
+            {/* {
                 console.log('before items: ', hero)
-            }
+            } */}
             
         </li>
 

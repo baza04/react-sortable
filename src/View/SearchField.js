@@ -2,14 +2,16 @@ import React, {useContext} from 'react'
 import Context from '../context'
 
 function SearchField() {
-    const { SearchHeroes } = useContext(Context)
-
+    const { setQuery } = useContext(Context)
+    
     return (
         <div className='SearchHeroes' >
             <input 
                 type='text'
-                onChange={(event) => SearchHeroes(event.target.value)}
+                onChange={(event) => setQuery({key: event.target.value.toLowerCase()})}
             />
+
+            
         </div>
     )
 }

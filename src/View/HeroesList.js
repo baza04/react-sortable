@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import HeroItem from './HeroItem'
 // import Context from './../context' // not need
@@ -22,13 +22,12 @@ function HeroesList({ heroes }) {
             /> */}
             <ul style={style.ul}>
                 <h2>Heroes Table</h2>
-                { heroes.slice(0,3).map((hero, index) => (
+                { heroes.map((hero, index) => (
                     <HeroItem
-                    hero={hero} 
-                    key={hero.id}
-                    index={index}
+                        hero={hero} 
+                        key={hero.id}
+                        index={index}
                     />
-                    // console.log("in list: ", hero) // just for check
                     ))} 
             </ul>
                 
