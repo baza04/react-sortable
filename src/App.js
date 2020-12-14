@@ -11,7 +11,7 @@ function App() {
   const [heroes, setHeroes] = React.useState([])
   const [vueHeroes, setVueHeroes] = React.useState(heroes)
   const [loading, setLoading] = React.useState(true)
-  const [query, setQuery] = React.useState({key:'', params: {}})
+  const [query, setQuery] = React.useState({key:'', sortParam: ''})
 
   useEffect(() => {  
     fetch('https://rawcdn.githack.com/akabab/superhero-api/0.2.0/api/all.json')
@@ -26,7 +26,7 @@ function App() {
   // SearchHeroes
   useEffect(() => {
     console.log('query', query)
-    SortHeroes(query.params)
+    SortHeroes(query.sortParam)
     let name, fullName
     setVueHeroes(heroes.filter((hero) => {
       name = hero.name.toLowerCase()
@@ -43,25 +43,40 @@ function App() {
   //   )
   // } 
 
- function SortHeroes(params) {
-    console.log('sort:', params)
-    if (params.fullName) {
-      
+ function SortHeroes(param) {
+    console.log('sort:', param)
+    let arr = []
+    switch (param) {
+      case 'fullName':
+        arr = heroes.sort((a, b) => (a.fullName > b.fullName) ? 1 : -1)
+        break;
+        case 'powerStats':
+          arr = heroes.sort((a, b) => (a.powerStats > b.powerStats) ? 1 : -1)
+          break;
+        case 'race':
+          arr = heroes.sort((a, b) => (a.race > b.race) ? 1 : -1)
+          break;
+        case 'gender':
+          arr = heroes.sort((a, b) => (a.gender > b.gender) ? 1 : -1)
+          break;
+        case 'height':
+          arr = heroes.sort((a, b) => (a.height > b.height) ? 1 : -1)
+          break;
+        case 'weight':
+          arr = heroes.sort((a, b) => (a.weight > b.weight) ? 1 : -1)
+          break;
+        case 'placeOfBirth':
+          arr = heroes.sort((a, b) => (a.placeOfBirth > b.placeOfBirth) ? 1 : -1)
+          break;
+        case 'alignement':
+          arr = heroes.sort((a, b) => (a.alignement > b.alignement) ? 1 : -1)
+          break;
+      default:
+        arr = heroes.sort((a, b) => (a.name > b.name) ? 1 : -1)
+        break;
     }
-    if (params.powerStats) {
-
-    }
-    if (params.race) {
-
-    }
-    if (params.gender) {}
-    if (params.height) {}
-    if (params.weight) {}
-    if (params.placeOfBirth) {}
-    if (params.alignement) {}
-    setVueHeroes(
-      
-    )
+    
+    setVueHeroes(arr)
 }
     
   return (

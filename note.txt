@@ -46,3 +46,43 @@ work: Object { occupation: "Green Lantern, former history professor", base: "Oa"
 ​
 <prototype>: Object { … }
 HeroItem.js:31
+
+
+====================================================
+
+    if (params.fullName) {
+      arr = heroes.sort((a, b) => (a.fullName > b.fullName) ? 1 : -1)
+    }
+    if (params.powerStats) {
+      arr = heroes.sort((a, b) => (a.powerStats > b.powerStats) ? 1 : -1)
+    }
+    if (params.race) {
+      arr = heroes.sort((a, b) => (a.race > b.race) ? 1 : -1)
+    }
+    if (params.gender) {
+      arr = heroes.sort((a, b) => (a.gender > b.gender) ? 1 : -1)
+    }
+    if (params.height) {
+      arr = heroes.sort((a, b) => (a.height > b.height) ? 1 : -1)
+    }
+    if (params.weight) {
+      arr = heroes.sort((a, b) => (a.weight > b.weight) ? 1 : -1)
+    }
+    if (params.placeOfBirth) {
+      arr = heroes.sort((a, b) => (a.placeOfBirth > b.placeOfBirth) ? 1 : -1)
+    }
+    if (params.alignement) {
+      arr = heroes.sort((a, b) => (a.alignement > b.alignement) ? 1 : -1)
+    }
+
+====================================================
+
+value='name'
+value='fullName' 
+value='powerStats'
+value='race'
+value='gender'
+value='height'
+value='weight'
+value='placeOfBirth'
+value='alignment'
