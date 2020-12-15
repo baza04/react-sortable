@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 function SearchField({ setQuery }) {
   function handleSubmit(event) {
     let query = {};
-    if (event.target[0].value) query.key = event.target[0].value;
+    if (event.target[0].value) query.key = event.target[0].value.toLowerCase();
     if (event.target[1].value) query.sortParam = event.target[1].value;
 
     setQuery(query);

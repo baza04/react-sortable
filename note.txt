@@ -62,31 +62,53 @@ HeroItem.js:31
 
 ====================================================
 
-    if (params.fullName) {
-      arr = heroes.sort((a, b) => (a.fullName > b.fullName) ? 1 : -1)
-    }
-    if (params.powerStats) {
-      arr = heroes.sort((a, b) => (a.powerStats > b.powerStats) ? 1 : -1)
-    }
-    if (params.race) {
-      arr = heroes.sort((a, b) => (a.race > b.race) ? 1 : -1)
-    }
-    if (params.gender) {
-      arr = heroes.sort((a, b) => (a.gender > b.gender) ? 1 : -1)
-    }
-    if (params.height) {
-      arr = heroes.sort((a, b) => (a.height > b.height) ? 1 : -1)
-    }
-    if (params.weight) {
-      arr = heroes.sort((a, b) => (a.weight > b.weight) ? 1 : -1)
-    }
-    if (params.placeOfBirth) {
-      arr = heroes.sort((a, b) => (a.placeOfBirth > b.placeOfBirth) ? 1 : -1)
-    }
-    if (params.alignement) {
-      arr = heroes.sort((a, b) => (a.alignement > b.alignement) ? 1 : -1)
+   /* switch (param) {
+      case "fullName":
+        arr = arr.sort((a, b) =>
+          a.biography.fullName > b.biography.fullName ? 1 : -1
+        );
+        break;
+      case "powerStats":
+        arr = arr.sort((a, b) => (a.powerStats > b.powerStats ? 1 : -1));
+        break;
+      case "race":
+        arr = arr.sort((a, b) =>
+          a.appearance.race > b.appearance.race ? 1 : -1
+        );
+        break;
+      case "gender":
+        arr = arr.sort((a, b) =>
+          a.appearance.gender > b.appearance.gender ? 1 : -1
+        );
+        break;
+      case "height":
+        arr = arr.sort((a, b) =>
+          a.appearance.height > b.appearance.height ? 1 : -1
+        );
+        break;
+      case "weight":
+        arr = arr.sort((a, b) =>
+          a.appearance.weight > b.appearance.weight ? 1 : -1
+        );
+        break;
+      case "placeOfBirth":
+        arr = arr.sort((a, b) =>
+          a.biography.placeOfBirth > b.biography.placeOfBirth ? 1 : -1
+        );
+        break;
+      case "alignement":
+        arr = arr.sort((a, b) =>
+          a.biography.alignement > b.biography.alignement ? 1 : -1
+        );
+        break;
+      default:
+        arr = arr.sort((a, b) => (a.name > b.name ? 1 : -1));
+    } */
     }
 
+// setVueHeroes(
+        // heroes.filter((hero) => {
+          // );
 ====================================================
 
 value='name'
