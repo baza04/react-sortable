@@ -1,21 +1,26 @@
 // import React from 'react'
-// import Context from './context'
-// import HeroesList from './View/HeroesList'
+// // import Context from './context'
+// // import HeroesList from './View/HeroesList'
 // import PropTypes from 'prop-types'
 
+// // function Core({test, setTest}) {
 // function Core({heroes, setHeroes}) {
 
 
 
 //     return (
-//         // <Context.Provider value={{ SearchHeroes, SortHeroes }} >
-//             <div className='Core'>
+//         <div className='Core'>
 
-//                 <HeroesList heroes={heroes} />
-//             </div>
-//         // </Context.Provider>
+//             {
+//             // setTest('not empty')
+//                 // console.log('COre:', test)
+//                 /* <HeroesList heroes={heroes} /> */
             
-//     )
+//             }
+            
+//             </div>
+            
+//             )
 // }
 
 // Core.propTypes = {
@@ -24,3 +29,6 @@
 // }
 
 // export default Core
+
+// </Context.Provider>
+// <Context.Provider value={{ SearchHeroes, SortHeroes }} >

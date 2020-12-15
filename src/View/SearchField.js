@@ -1,50 +1,42 @@
-import React, {useContext} from 'react'
-import Context from '../context'
+import React from "react";
+import PropTypes from "prop-types";
 
-// function handleSelect(event) {
-//     const target = event.target;
-//     const value = target.type === 'checkbox' ? target.checked : target.value;
-//     const name = target.name;
+function SearchField({ setQuery }) {
+  function handleSubmit(event) {
+    let query = {};
+    if (event.target[0].value) query.key = event.target[0].value;
+    if (event.target[1].value) query.sortParam = event.target[1].value;
 
-//     console.log('select', target, value, name)
+    setQuery(query);
+    event.preventDefault();
 
-// }
+    event.target[0].value = "";
+  }
 
-function SearchField() {
-    const { setQuery } = useContext(Context)
-    
-    function handleChange(event) {
-        console.log('select value', event.target.value)
-    }
+  return (
+    <form className="SearchHeroes" onSubmit={handleSubmit}>
+      <input type="text" name="search" placeholder="hero name" />
 
-     function handleInput(event) {
-         
-         setQuery({key: event.target.value.toLowerCase()})
-        } 
-
-    return (
-        <div className='SearchHeroes' >
-            <input 
-                type='text'
-                onChange={handleInput}
-            />
-
-            <select onChange={handleChange}>
-                <option selected value='name' >Name</option>
-                <option value='FullName' >FullName</option>
-                <option value='PowerStats' >PowerStats</option>
-                <option value='Race' >Race</option>
-                <option value='Gender' >Gender</option>
-                <option value='Height' >Height</option>
-                <option value='Weight' >Weight</option>
-                <option value='placeOfBirth' >placeOfBirth</option>
-                <option value='Alignment' >Alignment</option>
-            </select>
-
-        </div>
-    )
+      <select name="type">
+        <option defaultValue value="name">
+          Name
+        </option>
+        <option value="fullName"> FullName </option>
+        <option value="powerStats"> PowerStats </option>
+        <option value="race"> Race </option>
+        <option value="gender"> Gender </option>
+        <option value="height"> Height </option>
+        <option value="weight"> Weight </option>
+        <option value="placeOfBirth"> placeOfBirth </option>
+        <option value="alignment"> Alignment </option>
+      </select>
+      <input type="submit" value="seacrh" />
+    </form>
+  );
 }
 
-export default SearchField 
+SearchField.PropType = {
+  setQuery: PropTypes.func.isRequired,
+};
 
-
+export default SearchField;
